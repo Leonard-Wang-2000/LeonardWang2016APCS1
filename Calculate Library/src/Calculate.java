@@ -78,11 +78,16 @@ public class Calculate {
 			return b;
 		}
 	}
-	public static double round2(double a){
-		 a = a*1000;
-		 a = (int) a;
-		 a = (double) a;
-		 a = a/1000;
+	public static double round2 (double a){
+		int answer = ((int)(a * 100));
+		 if ((a * 100)-answer >= .5){
+			 double roundup = ((int)(a*100)+1)/100.00;
+			 return roundup;		
+		 }
 		 
+		 else {
+			 double rounddown = (int)(a*100)/(100.00);
+			 return rounddown;
+		 }
 	}
 }

@@ -15,7 +15,7 @@ public class DoMath {
 			System.out.println(Calculate.isDivisibleBy(10, 10));
 			System.out.println(Calculate.absValue(5));
 			System.out.println(Calculate.max(5, 10));
-			
+			System.out.println(Calculate.round2(3.146));
 			
 		
 
