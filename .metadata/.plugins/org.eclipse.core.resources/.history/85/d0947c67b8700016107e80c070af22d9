@@ -79,10 +79,10 @@ public class Calculate {
 		}
 	}
 	public static double round2(double a){
-		 a = a*1000;
+		 a = a*100;
 		 a = (int) a;
 		 a = (double) a;
-		 a = a/1000;
+		 a = a/100;
 		 
 	}
 }
