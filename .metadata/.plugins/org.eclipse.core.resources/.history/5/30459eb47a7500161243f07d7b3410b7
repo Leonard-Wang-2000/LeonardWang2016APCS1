@@ -126,8 +126,5 @@ public class Calculate {
 			return gcf(b, a%b);
 			}
 	}
-	public static double sqrt(double a){
-		
-	}
 }
 

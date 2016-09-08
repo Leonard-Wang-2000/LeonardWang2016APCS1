@@ -16,8 +16,6 @@ public class DoMath {
 			System.out.println(Calculate.absValue(5));
 			System.out.println(Calculate.max(5, 10));
 			System.out.println(Calculate.round2(3.146));
-			System.out.println(Calculate.isPrime(13));
-			System.out.println(Calculate.gcf(200, 65));
 			
 		
 

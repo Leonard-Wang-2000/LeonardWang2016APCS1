@@ -116,17 +116,6 @@ public class Calculate {
 		return s;
 	}
 	public static int gcf(int a, int b){
-		boolean d = true;
-		if(d = Calculate.isDivisibleBy(a, b)){
-			return b;
-		}
-		if(b == 0){
-			return b;
-		}else{
-			return gcf(b, a%b);
-			}
-	}
-	public static double sqrt(double a){
 		
 	}
 }
