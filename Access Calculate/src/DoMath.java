@@ -16,8 +16,11 @@ public class DoMath {
 			System.out.println(Calculate.absValue(5));
 			System.out.println(Calculate.max(5, 10));
 			System.out.println(Calculate.round2(3.146));
-			System.out.println(Calculate.isPrime(13));
+			System.out.println(Calculate.exponent(2, 3));
+			System.out.println(Calculate.factorial(-3));
+			System.out.println(Calculate.isPrime(5));
 			System.out.println(Calculate.gcf(200, 65));
+			System.out.println(Calculate.sqrt(100.0));
 			
 		
 
