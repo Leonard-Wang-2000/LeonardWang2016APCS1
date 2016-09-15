@@ -152,15 +152,29 @@ public class Calculate {
 	}
 	public static String quadForm(int a, int b, int c){
 		double x = (double)(a);
-		int e = 0;
-		int f = 0;
+		double y = (double)(b);
+		double z = (double)(c);
+		double e = 0;
+		double f = 0;
 		String d = "";
+		String u = "";
 		if(Calculate.discriminant(a, b, c) < 0){
 			d = "no real roots";
+			return d;
 		} else if(Calculate.discriminant(a, b, c) == 0){
 			e = -b/2*a;
+			d = String.valueOf(e);
+			return d;
 		} else{
-			e = -b - (Calculate.sqrt(Calculate.discriminant(a, b, c)));
+			e = (-b - (Calculate.sqrt(Calculate.discriminant(x, y, z))))/(2*a);
+			f = (-b + (Calculate.sqrt(Calculate.discriminant(x, y, z))))/(2*a);
+			if(e>f){
+				d = String.valueOf(e);
+				u = String.valueOf(f);
+				return f + " and " + e;
+			} else{
+				return e + " and " + f;
+			}
 		}
 	}
 

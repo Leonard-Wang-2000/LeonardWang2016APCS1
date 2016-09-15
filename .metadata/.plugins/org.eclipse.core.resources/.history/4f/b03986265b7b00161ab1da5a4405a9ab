@@ -35,6 +35,9 @@ public class Calculate {
 		return((a*c) + e +"^2  + " + ((b*c)+(d*a)) + e + " + " +  d*b);
 	}
 	public static boolean isDivisibleBy(int a, int b){
+		if(b < 0){
+			throw new IllegalArgumentException("Input is negative");
+		}
 		if(a%b ==0){
 			return true;
 		}
@@ -91,6 +94,9 @@ public class Calculate {
 		 }
 	}
 	public static double exponent(double a, double b){
+		if(b < 0){
+			throw new IllegalArgumentException("Input is negative");
+		}
 		double answer = 1.0;
 		for(int i = 0; i < b; i++){
 			answer *= a;
@@ -99,6 +105,9 @@ public class Calculate {
 	}
 	public static int factorial(int a){
 		int answer = 1;
+		if(a < 0){
+			throw new IllegalArgumentException("Input is negative");
+		}
 		for(int i = 1; i <= a; i++){
 			answer *= i;
 		}
@@ -126,5 +135,35 @@ public class Calculate {
 			return gcf(b, a%b);
 			}
 	}
+	public static double sqrt(double a){
+		if(a < 0){
+			throw new IllegalArgumentException("Input is negative");
+		}
+		double t;
+		 
+		double squareRoot = a / 2;
+	 
+		do {
+			t = squareRoot;
+			squareRoot = (t + (a / t)) / 2;
+		} while ((t - squareRoot) != 0);
+	 
+		return squareRoot;
+	}
+	public static String quadForm(int a, int b, int c){
+		double x = (double)(a);
+		int e = 0;
+		int f = 0;
+		String d = "";
+		if(Calculate.discriminant(a, b, c) < 0){
+			d = "no real roots";
+		} else if(Calculate.discriminant(a, b, c) == 0){
+			e = -b/2*a;
+		} else{
+			e = -b - (Calculate.sqrt(Calculate.discriminant(a, b, c)));
+		}
+	}
+
+	
 }
 
