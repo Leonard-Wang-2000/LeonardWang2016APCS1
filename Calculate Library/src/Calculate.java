@@ -1,23 +1,23 @@
 
 //Leonard Wang 8/30/16
 public class Calculate {
-	public static int square(int a){
-		return a*a;
+	public static int square(int numToBeSquared){
+		return numToBeSquared*numToBeSquared;
 	}
-	public static int cube(int a){
-		return a*a*a;
+	public static int cube(int numToBeCubed){
+		return numToBeCubed*numToBeCubed*numToBeCubed;
 	}
-	public static double average(double a, double b){
-		return (a*b)/2;
+	public static double average(double num1, double num2){
+		return (num1*num2)/2;
 	}
-	public static double average(double a, double b, double c){
-		return (a*b*c)/3;
+	public static double average(double num1, double num2, double num3){
+		return (num1*num2*num3)/3;
 	}
-	public static double toDegrees(double a){
-		return (180*a)/3.14159;
+	public static double toDegrees(double radians){
+		return (180*radians)/3.14159;
 	}
-	public static double toRadians(double a){
-		return 3.14159*a/(180);
+	public static double toRadians(double degrees){
+		return 3.14159*degrees/(180);
 	}
 	public static double discriminant(double a, double b, double c){
 		return((b*b)-(4*a*c));
