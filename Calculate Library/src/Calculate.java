@@ -22,101 +22,101 @@ public class Calculate {
 	public static double discriminant(double a, double b, double c){
 		return((b*b)-(4*a*c));
 	}
-	public static String toImproperFrac(int a, int b, int c){
-		int d = (a*c) + b;
-		return (d + "/" + c);
+	public static String toImproperFrac(int addend1, int addend2, int addend3){
+		int numerator = (addend1*addend3) + addend2;
+		return (numerator + "/" + addend3);
 	}
-	public static String toMixedNUm(int a, int b){
-		int c = a/b;
-		int d = a%b;
-		return(c + "_" + d + "/" + b);
+	public static String toMixedNUm(int number1, int denominator){
+		int wholeNumber = number1/denominator;
+		int numerator = number1%denominator;
+		return(wholeNumber + "_" + numerator + "/" + denominator);
 	}
-	public static String foil( int a, int b, int c, int d, String e){
-		return((a*c) + e +"^2  + " + ((b*c)+(d*a)) + e + " + " +  d*b);
+	public static String foil( int a, int b, int c, int d, String x){
+		return((a*c) + x +"^2  + " + ((b*c)+(d*a)) + x + " + " +  d*b);
 	}
-	public static boolean isDivisibleBy(int a, int b){
-		if(b < 0){
+	public static boolean isDivisibleBy(int dividend, int divisor){
+		if(divisor < 0){
 			throw new IllegalArgumentException("Input is negative");
 		}
-		if(a%b ==0){
+		if(dividend%divisor ==0){
 			return true;
 		}
 		else{
 			return false;
 		}
 	}
-	public static double absValue(double a){
-		if(a < 0){
-			return a*-1;
+	public static double absValue(double num1){
+		if(num1 < 0){
+			return num1*-1;
 		}
 		else{
-			return a;
+			return num1;
 		}
 	}
-	public static int max(int a, int b){
-		if(a>b){
-			return a;
+	public static int max(int num1, int num2){
+		if(num1>num2){
+			return num1;
 		}
 		else{
-			return b;
+			return num2;
 		}
 	}
-	public static double max(double a, double b, double c){
-		if(a>b && a>c){
+	public static double max(double num1, double num2, double num3){
+		if(num1>num2 && num1>num3){
 			
-			return a;
+			return num1;
 		}
-		else if(b>a && b>c){
-			return b;
-		}
-		else{
-			return c;
-		}
-	}
-	public static double min(double a, double b){
-		if(a<b){
-			return a;
+		else if(num2>num1 && num2>num3){
+			return num2;
 		}
 		else{
-			return b;
+			return num3;
 		}
 	}
-	public static double round2 (double a){
-		int answer = ((int)(a * 100));
-		 if ((a * 100)-answer >= .5){
-			 double roundup = ((int)(a*100)+1)/100.00;
+	public static double min(double num1, double num2){
+		if(num1<num2){
+			return num1;
+		}
+		else{
+			return num2;
+		}
+	}
+	public static double round2 (double numToBeRounded){
+		int answer = ((int)(numToBeRounded * 100));
+		 if ((numToBeRounded * 100)-answer >= .5){
+			 double roundup = ((int)(numToBeRounded*100)+1)/100.00;
 			 return roundup;		
 		 }
 		 
 		 else {
-			 double rounddown = (int)(a*100)/(100.00);
+			 double rounddown = (int)(numToBeRounded*100)/(100.00);
 			 return rounddown;
 		 }
 	}
-	public static double exponent(double a, double b){
-		if(b < 0){
+	public static double exponent(double base, double power){
+		if(power < 0){
 			throw new IllegalArgumentException("Input is negative");
 		}
 		double answer = 1.0;
-		for(int i = 0; i < b; i++){
-			answer *= a;
+		for(int i = 0; i < power; i++){
+			answer *= base;
 		}
 		return answer;
 	}
-	public static int factorial(int a){
+	public static int factorial(int num1){
 		int answer = 1;
-		if(a < 0){
+		if(num1 < 0){
 			throw new IllegalArgumentException("Input is negative");
 		}
-		for(int i = 1; i <= a; i++){
+		for(int i = 1; i <= num1; i++){
 			answer *= i;
 		}
 		return answer;
 	}
-	public static boolean isPrime(int a){
+	public static boolean isPrime(int num1){
 		boolean s = true;
-		for(int i = 1; i < a; i++){
-			if(s = Calculate.isDivisibleBy(a, i)){
+		for(int i = 1; i < num1; i++){
+			if(s = Calculate.isDivisibleBy(num1, i)){
 				s =  false;
 			}else{
 				s = true;
@@ -124,15 +124,15 @@ public class Calculate {
 		}
 		return s;
 	}
-	public static int gcf(int a, int b){
+	public static int gcf(int num1, int num2){
 		boolean d = true;
-		if(d = Calculate.isDivisibleBy(a, b)){
-			return b;
+		if(d = Calculate.isDivisibleBy(num1, num2)){
+			return num2;
 		}
-		if(b == 0){
-			return b;
+		if(num2 == 0){
+			return num2;
 		}else{
-			return gcf(b, a%b);
+			return gcf(num2, num1%num2);
 			}
 	}
 	public static double sqrt(double a){
