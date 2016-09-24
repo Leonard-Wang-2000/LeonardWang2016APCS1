@@ -1,0 +1,31 @@
+//Class to call and test all calculate functions
+//Leonard Wang 1st period, 9/23/16
+public class DoMath {
+ 
+	public static void main(String[] args) {
+			System.out.println("The result of the method square in the Calulate library is " + Calculate.square(5));
+			System.out.println("The result of the method cube in the Calulate library is " + Calculate.cube(5));
+			System.out.println("The result of the method average in the Calulate library is " + Calculate.average(5, 2));
+			System.out.println("The result of the method average in the Calulate library is " + Calculate.average(5, 5, 5));
+			System.out.println("The result of the method toDegree in the Calulate library is " + Calculate.toDegrees(5));
+			System.out.println("The result of the method toRadian in the Calulate library is " + Calculate.toRadians(180));
+			System.out.println("The result of the method discrimminant in the Calulate library is " + Calculate.discriminant(5, 2, 3));
+			System.out.println("The result of the method toImproperFrac in the Calulate library is " + Calculate.toImproperFrac(2, 1, 2));
+			System.out.println("The result of the method toMixedNum in the Calulate library is " + Calculate.toMixedNUm(5, 2));
+			System.out.println("The result of the method foil in the Calulate library is " + Calculate.foil(5, -2, 3, 4, "x"));
+			System.out.println("The result of the method isDivisbleBy in the Calulate library is " + Calculate.isDivisibleBy(10, 10));
+			System.out.println("The result of the method absValue in the Calulate library is " + Calculate.absValue(5));
+			System.out.println("The result of the method max in the Calulate library is " + Calculate.max(5, 10));
+			System.out.println("The result of the method max in the Calulate library is " + Calculate.max(5, 10, 15));
+			System.out.println("The result of the method round2 in the Calulate library is " + Calculate.round2(3.146));
+			System.out.println("The result of the method exponent in the Calulate library is " + Calculate.exponent(2, 3));
+			System.out.println("The result of the method factorial in the Calulate library is " +Calculate.factorial(3));
+			System.out.println("The result of the method isPrime in the Calulate library is " + Calculate.isPrime(5));
+			System.out.println("The result of the method gcf in the Calulate library is " + Calculate.gcf(200, 65));
+			System.out.println("The result of the method sqrt in the Calulate library is " + (Calculate.sqrt(100.0)));
+			System.out.println("The result of the method quadform in the Calulate library is " + Calculate.quadForm(1, 2, 1));
+		
+
+	}
+
+}
