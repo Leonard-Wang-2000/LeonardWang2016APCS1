@@ -11,7 +11,7 @@ public class CollabProgram1 {
 		String[] stringOfInts = input.split(" ");
 		int total = 0;
 		int min = Integer.MAX_VALUE;
-		int max = Integer.MIN_VALUE;
+		int max = 0;
 		int biggestEven = 0;
 		//for loop that runs for the length of modified string
 		for(int i = 0; i < stringOfInts.length; i++){
