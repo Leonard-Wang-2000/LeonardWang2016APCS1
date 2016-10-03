@@ -5,19 +5,18 @@ public class CollabProgram1 {
 	public static void main(String[] args) {
 		//Makes a new Scanner
 		Scanner userInput = new Scanner(System.in);
-		//Get the # of integers the user is going to enter
 		System.out.println("How many integers do you want to put in?");
-		//variable initialization
 		int totalInts = userInput.nextInt();
+		//Gets rid of all the spaces between the int values
 		int total = 0;
 		int min = Integer.MAX_VALUE;
 		int max = Integer.MIN_VALUE;
 		int biggestEven = 0;
 		//for loop that runs for the length of modified string
-		System.out.println("Enter a string of numbers with spaces between each");
 		for(int i = 0; i < totalInts; i++){
-			//tests for min, max total, largestEven
+			System.out.println("Enter a string of numbers with spaces between each");
 			int input = userInput.nextInt();
+			//parse changes the string values to int values
 				if(input > max){
 					max = input;
 				}
