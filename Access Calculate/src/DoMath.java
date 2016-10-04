@@ -24,7 +24,7 @@ public class DoMath {
 			System.out.println("The result of the method isPrime in the Calculate library is " + Calculate.isPrime(5));
 			System.out.println("The result of the method gcf in the Calculate library is " + Calculate.gcf(200, 65));
 			System.out.println("The result of the method sqrt in the Calculate library is " + (Calculate.sqrt(100.0)));
-			System.out.println("The result of the method quadform in the Calculate library is " + Calculate.quadForm(1, 2, 1));
+			System.out.println("The result of the method quadform in the Calculate library is " + Calculate.quadForm(-1, 32, 10));
 		
 
 	}

@@ -4,7 +4,7 @@ public class Calculate {
 	//Number to be squared
 	public static int square(int numToBeSquared){
 		return numToBeSquared*numToBeSquared;
-	}
+	} 
 	//number to be cubed
 	public static int cube(int numToBeCubed){
 		return numToBeCubed*numToBeCubed*numToBeCubed;
@@ -180,16 +180,18 @@ public class Calculate {
 		double solution2 = 0;
 		String returnValue = "";
 		String returnValue2 = "";
+		//if discriminant is less than 0
 		if(Calculate.discriminant(a, b, c) < 0){
 			returnValue = "no real roots";
 			return returnValue;
 		} else if(Calculate.discriminant(a, b, c) == 0){
 			solution1 = -b/2*a;
+			solution1 = Calculate.round2(solution1);
 			returnValue = String.valueOf(solution1);
 			return returnValue;
 		} else{
-			solution1 = (-b - (Calculate.sqrt(Calculate.discriminant(x, y, z))))/(2*a);
-			solution2 = (-b + (Calculate.sqrt(Calculate.discriminant(x, y, z))))/(2*a);
+			solution1 = Calculate.round2((-b - (Calculate.sqrt(Calculate.discriminant(x, y, z))))/(2*a));
+			solution2 = Calculate.round2((-b + (Calculate.sqrt(Calculate.discriminant(x, y, z))))/(2*a));
 			if(solution1>solution2){
 				returnValue = String.valueOf(solution1);
 				returnValue2 = String.valueOf(solution2);

@@ -36,7 +36,11 @@ public class CollabProgram1 {
 		System.out.println("The largest number is " + max);
 		System.out.println("The smallest number is " +  min);
 		System.out.println("The total of the even numbers " + total);
-		System.out.println("The largest even number is " + biggestEven);
+		if(biggestEven == 0){
+			System.out.println("No even numbers inputted");
+		}else{
+			System.out.println("The largest even number is " + biggestEven);
+		}
 		
 	}
 
