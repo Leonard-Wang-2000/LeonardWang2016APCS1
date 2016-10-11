@@ -24,27 +24,27 @@ public class Magpie3 {
 	
 	
 	public String getResponse(String statement) {
-		int notFoundPsn = statement.indexOf("slow");
+		int notFoundPsn = findKeyword(statement, "slow");
 		System.out.println(notFoundPsn);
 		String response = "";
 		if (findKeyword(statement, "no") >= 0) {
 			response = "Why so negative?";
-		} else if (statement.indexOf("mother") >= 0
-				|| statement.indexOf("father") >= 0
-				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0) {
+		} else if (findKeyword(statement, "mother") >= 0
+				|| findKeyword(statement, "father") >= 0
+				|| findKeyword(statement, "sister") >= 0
+				|| findKeyword(statement, "brother") >= 0) {
 			response = "Tell me more about your family.";
-		} else if(statement.indexOf("Mr.") >= 0){
+		} else if(findKeyword(statement, "Mr.") >= 0){
 			response = "He sounds like a great teacher!";
-		} else if(statement.indexOf("Mrs.") >= 0
-				|| statement.indexOf("Ms.") >= 0) {
+		} else if(findKeyword(statement, "Mrs.") >= 0
+				|| findKeyword(statement, "Ms.") >= 0) {
 			response = "She sounds like a great teacher!";
-		} else if(statement.indexOf("Hi")>= 0
-				||statement.indexOf("Hey") >=0){
+		} else if(findKeyword(statement, "Hi")>= 0
+				||findKeyword(statement, "Hey") >=0){
 			response = "Howdy!";
-		} else if(statement.indexOf("you")>=0){
+		} else if(findKeyword(statement, "you")>=0){
 			response = "Let's not talk about me";
-		} else if(statement.indexOf("food") >= 0){
+		} else if(findKeyword(statement, "food") >= 0){
 			response = "I eat humans";
 		}
 		else {
