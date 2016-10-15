@@ -23,9 +23,7 @@ public class Magpie4 {
 	 * response based on the rules given
 	 */
 	public String getResponse(String statement) {
-		
 		String response = "";
-		String trimmedStatement = statement.trim();
 		if (findKeyword(statement, "no") >= 0) {
 			response = "Why so negative?";
 		} else if (findKeyword(statement, "mother") >= 0
@@ -34,22 +32,25 @@ public class Magpie4 {
 				|| findKeyword(statement, "brother") >= 0) {
 			response = "Tell me more about your family.";
 			
-		} else if(findKeyword(statement, "Mr.") >= 0
-				|| findKeyword(statement, "Ms.") >= 0
-				|| findKeyword(statement, "Mrs.") >= 0) {
-			response = "Wow, your teacher rocks!";
+		} else if(findKeyword(statement, "Mr.Paul") >= 0
+				|| findKeyword(statement, "Ms.Dreyer") >= 0
+				|| findKeyword(statement, "Ms.Tutaj") >= 0
+				|| findKeyword(statement, "Ms.Alberta") >= 0
+				|| findKeyword(statement, "Ms.Ronina") >= 0
+				|| findKeyword(statement, "Ms.Liu") >= 0) {
+			response = "Wow, your teacher must be amazing!";
 			
-		}else if(findKeyword(statement, "food") >= 0){
-			response = "I eat humans for food";
+		}else if(findKeyword(statement, "video games") >= 0){
+			response = "I like battlefield, whats your favorite game?";
 			
-		}else if(findKeyword(statement, "school") >= 0){
-			response = "School is for the weak";
+		}else if(findKeyword(statement, "cake") >= 0){
+			response = "I love cake. I would eat it all day long!";
 			
-		}else if(findKeyword(statement, "Leonard") >= 0){
-			response = "Swaggiest person alive.";
+		}else if(findKeyword(statement, "boba") >= 0){
+			response = "Where is your favorite place to get boba? I like Eggettes the most.";
 			
-		}else if(trimmedStatement.length() == 0){
-			response = "Say something please";
+		}else if(statement.length() == 0){
+			response = "Come on, why don't you say something? :(";
 			
 		// Responses which require transformations
 		}else if (findKeyword(statement, "I want to", 0) >= 0) {
@@ -93,19 +94,6 @@ public class Magpie4 {
 		String restOfStatement = statement.substring(psn + 9).trim();
 		return "What would it mean to " + restOfStatement + "?";
 	}
-	/* takes a statement with "I want <something>." and transforms it into 
-	 * "Would you really be happy if you had <something>?"
-	 */
-	private String transformIWantSomethingStatement(String statement){
-		statement = statement.trim();
-		String lastChar = statement.substring(statement.length()- 1);
-		if(lastChar.equals(".")){
-			statement = statement.substring(0, statement.length() - 1);
-		}
-		int psn = findKeyword(statement, "I want", 0);
-		String restOfStatement = statement.substring(psn + 6).trim();
-		return "Would you really be happy if you had " + restOfStatement + "?";
-	}
 
 	/**
 	 * Take a statement with "you <something> me" and transform it into
@@ -129,19 +117,6 @@ public class Magpie4 {
 		String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe)
 				.trim();
 		return "What makes you think that I " + restOfStatement + " you?";
-	}
-	
-	private String transformISomethingYouStatement(String statement){
-		statement = statement.trim();
-		String lastChar = statement.substring(statement.length() - 1);
-		if(lastChar.equalsIgnoreCase(".")){
-			statement = statement.substring(0, statement.length() - 1);
-		}
-		int psnOfI = findKeyword(statement, "I", 0);
-		int psnOfYou = findKeyword(statement, "you", psnOfI + 2);
-		
-		String restOfStatement = statement.substring(psnOfI + 2, psnOfYou).trim();
-		return "Why do you " + restOfStatement + " me?";
 	}
 
 	/**
@@ -209,7 +184,7 @@ public class Magpie4 {
 	 */
 	private String getRandomResponse() {
 		
-		final int NUMBER_OF_RESPONSES = 7;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -226,8 +201,6 @@ public class Magpie4 {
 			response = "Hahaha, very funny.";
 		} else if(whichResponse == 5){
 			response = "I like it, sounds nice.";
-		} else if(whichResponse == 6){
-			response = "That's a lie";
 		}
 
  		return response;

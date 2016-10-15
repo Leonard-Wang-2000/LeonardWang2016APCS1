@@ -25,7 +25,6 @@ public class Magpie4 {
 	public String getResponse(String statement) {
 		
 		String response = "";
-		String trimmedStatement = statement.trim();
 		if (findKeyword(statement, "no") >= 0) {
 			response = "Why so negative?";
 		} else if (findKeyword(statement, "mother") >= 0
@@ -48,7 +47,7 @@ public class Magpie4 {
 		}else if(findKeyword(statement, "Leonard") >= 0){
 			response = "Swaggiest person alive.";
 			
-		}else if(trimmedStatement.length() == 0){
+		}else if(statement.length() == 0){
 			response = "Say something please";
 			
 		// Responses which require transformations
@@ -209,7 +208,7 @@ public class Magpie4 {
 	 */
 	private String getRandomResponse() {
 		
-		final int NUMBER_OF_RESPONSES = 7;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -226,8 +225,6 @@ public class Magpie4 {
 			response = "Hahaha, very funny.";
 		} else if(whichResponse == 5){
 			response = "I like it, sounds nice.";
-		} else if(whichResponse == 6){
-			response = "That's a lie";
 		}
 
  		return response;
