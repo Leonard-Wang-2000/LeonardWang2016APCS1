@@ -1,4 +1,3 @@
-//Leonard Wang, 1st period, 10/16/16
 public class Magpie4 {
 	
 	//Get a default greeting and return a greeting
@@ -24,7 +23,7 @@ public class Magpie4 {
 	 * response based on the rules given
 	 */
 	public String getResponse(String statement) {
-		//Looks for certain String inputs and gives an according response
+		
 		String response = "";
 		String trimmedStatement = statement.trim();
 		if (findKeyword(statement, "no") >= 0) {
