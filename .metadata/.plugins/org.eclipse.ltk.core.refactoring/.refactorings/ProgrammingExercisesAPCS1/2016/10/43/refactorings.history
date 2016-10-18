@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;numberOfColons&apos; in &apos;HourGlass.printBottomHalf(...)&apos; to &apos;numberOfColonsInFirstLine&apos;&#x0D;&#x0A;- Original project: &apos;ProgrammingExercisesAPCS1&apos;&#x0D;&#x0A;- Original element: &apos;HourGlass.printBottomHalf(int).numberOfColons&apos;&#x0D;&#x0A;- Renamed element: &apos;numberOfColons&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;numberOfColons&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{HourGlass.java[HourGlass~printBottomHalf~I@numberOfColons!840!857!844!857!I!0!true" name="numberOfColonsInFirstLine" references="true" stamp="1476805819800" version="1.0"/>
+</session>
