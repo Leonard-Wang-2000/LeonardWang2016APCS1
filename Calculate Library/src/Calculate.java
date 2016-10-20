@@ -11,11 +11,11 @@ public class Calculate {
 	}
 	//average method with 2 parameters
 	public static double average(double num1, double num2){
-		return (num1*num2)/2;
+		return (num1+num2)/2;
 	}
 	//average method with 3 parameters
 	public static double average(double num1, double num2, double num3){
-		return (num1*num2*num3)/3;
+		return (num1+num2+num3)/3;
 	}
 	//Converts to degrees
 	public static double toDegrees(double radians){
@@ -35,14 +35,26 @@ public class Calculate {
 		return (numerator + "/" + addend3);
 	}
 	//changes numbers to a mixed number
-	public static String toMixedNUm(int number1, int denominator){
+	public static String toMixedNum(int number1, int denominator){
 		int wholeNumber = number1/denominator;
 		int numerator = number1%denominator;
-		return(wholeNumber + "_" + numerator + "/" + denominator);
+		if(numerator != 0){
+			return(wholeNumber + "_" + numerator + "/" + denominator);
+		} else{
+			return(wholeNumber + "");
+		}
 	}
 	//returns the foil of a quadratic
 	public static String foil( int a, int b, int c, int d, String x){
+		if((b*c) + (d*a) < 0 && (d*b) < 0){
+			return((a*c) + x +"^2  - " + ((b*c)+(d*a))*-1 + x + " - " +  d*b*-1);
+		} else if((b*c) + (d*a) < 0){
+			return((a*c) + x +"^2  - " + ((b*c)+(d*a))*-1 + x + " + " +  d*b);
+		} else if((d*b) < 0){
+			return((a*c) + x +"^2  + " + ((b*c)+(d*a)) + x + " - " +  d*b*-1);
+		} else{
 		return((a*c) + x +"^2  + " + ((b*c)+(d*a)) + x + " + " +  d*b);
+		}
 	}
 	//tells if its divisble or not
 	public static boolean isDivisibleBy(int dividend, int divisor){
@@ -134,9 +146,9 @@ public class Calculate {
 	//returns if a number is prime or not
 	public static boolean isPrime(int num1){
 		boolean s = true;
-		for(int i = 1; i < num1; i++){
+		for(int i = 2; i < num1; i++){
 			if(s = Calculate.isDivisibleBy(num1, i)){
-				s =  false;
+				return false;
 			}else{
 				s = true;
 			}
