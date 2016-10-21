@@ -1,12 +1,15 @@
 public class HourGlass{
 
 public static void main(String[] args) {
-	int numberOfColonsInTheFirstLine = 8;
+	int numberOfColonsInTheFirstLine = 10;
 //print line 1
 lineWithQuotes(numberOfColonsInTheFirstLine);
 //print the top half
 printTopHalf(numberOfColonsInTheFirstLine);
-System.out.println("     ||");
+for(int i = 0; i < numberOfColonsInTheFirstLine/2 + 1; i++){
+	System.out.print(" ");
+}
+System.out.println("||");
 printBottomHalf(numberOfColonsInTheFirstLine);
 lineWithQuotes(numberOfColonsInTheFirstLine);
 //print line 6 (middle)
