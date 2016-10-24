@@ -23,16 +23,6 @@ public class Split
 		 * What if it's a fancy sandwich with multiple pieces of bread?
 		*/
 		splitBread("breadapplebreadyogurtyabreadhibread");
-		int[] distanceDriven = {5, 4, 3, 2, 1 };
-		int first = distanceDriven[0];
-		for(int i = 1; i < distanceDriven.length; i++){
-			distanceDriven[i-1] = distanceDriven[i];
-			if(distanceDriven.length-1 == i){
-				distanceDriven[distanceDriven.length-1] = first;
-			}
-		}
-		System.out.println(Arrays.toString(distanceDriven));
-
 		
 		//Your task pt 2:
 		/*Write a method that take in a string like "apples pineapples bread lettus tomato bacon mayo ham bread cheese" describing a sandwich

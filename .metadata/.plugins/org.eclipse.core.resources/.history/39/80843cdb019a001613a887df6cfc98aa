@@ -24,7 +24,7 @@ public class Split
 		*/
 		splitBread("breadapplebreadyogurtyabreadhibread");
 		int[] distanceDriven = {5, 4, 3, 2, 1 };
-		int first = distanceDriven[0];
+		int first = distanceDriven[distanceDriven.length-1];
 		for(int i = 1; i < distanceDriven.length; i++){
 			distanceDriven[i-1] = distanceDriven[i];
 			if(distanceDriven.length-1 == i){

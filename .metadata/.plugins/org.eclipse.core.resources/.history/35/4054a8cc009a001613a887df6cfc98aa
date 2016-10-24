@@ -24,13 +24,10 @@ public class Split
 		*/
 		splitBread("breadapplebreadyogurtyabreadhibread");
 		int[] distanceDriven = {5, 4, 3, 2, 1 };
-		int first = distanceDriven[0];
 		for(int i = 1; i < distanceDriven.length; i++){
-			distanceDriven[i-1] = distanceDriven[i];
-			if(distanceDriven.length-1 == i){
-				distanceDriven[distanceDriven.length-1] = first;
-			}
+			distanceDriven[i] = distanceDriven[i-1];
 		}
+		distanceDriven[4] = 5; 
 		System.out.println(Arrays.toString(distanceDriven));
 
 		
