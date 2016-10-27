@@ -1,5 +1,5 @@
 import java.util.Arrays;
-
+//Leonard Wang, 1st period, AP CompSci
 public class Split 
 {
 
@@ -22,8 +22,8 @@ public class Split
 		 * use String.split to split up the sandwich by the word "bread" and return what's in the middle of the sandwich and ignores what's on the outside
 		 * What if it's a fancy sandwich with multiple pieces of bread?
 		*/
-		splitBread("breadapplebreadyogurtyabreadhibread");
-		splitStringAtSpaces("bread lettuce tomatoe cheese bread egg");
+		splitBread("appleyogurtyahibread");
+		splitStringAtSpaces("bread ham lettuce yogurt tomatoe mayo mayo mayo cheese bread egg cheese");
 
 		
 		//Your task pt 2:
@@ -36,13 +36,26 @@ public class Split
 
 	}
 public static void splitStringAtSpaces(String sandwiche){
-	String [] revisedSandwiche = sandwiche.split(" ");
-	System.out.println(Arrays.toString(revisedSandwiche));
+	String [] revisedSandwiche = sandwiche.split("bread");
+	if(revisedSandwiche.length <= 2){
+		System.out.println("Not a sandwiche");
+	}else {
+		if(revisedSandwiche[1].equals(" ")){
+			System.out.println("Not A sandwiche");
+		}else{
+		for(int i = 1; i < revisedSandwiche.length-1; i++){
+			sandwiche = revisedSandwiche[i];
+			System.out.print(sandwiche);
+		}
+		}
+	}
+//	if(revisedSandwiche.length == 3){
+//		sandwiche = revisedSandwiche[1];
+//		System.out.println(sandwiche);
+//	}
 }
 
 public static void splitBread(String breadStatement){
-	int numberOfBreads = 0;
-	String search = "bread";
 	String[] bread = breadStatement.split("bread");
 //	while(breadStatement.contains("bread")){
 //		breadStatement.replaceFirst("bread"," ");
@@ -54,24 +67,28 @@ public static void splitBread(String breadStatement){
 //		System.out.println(bread[i-1]);
 //	}
 	//need to find # of breads
-		if(bread.length == 2){
-			String breadMiddleStatement = bread[1];
-			System.out.println("The statement between the two breads are: " + breadMiddleStatement);
-		}
-		if(bread.length == 3){
-			String breadMiddleStatement1 = bread[1];
-			String breadMiddleStatement2 = bread[2];
-			System.out.println("The statement between the two breads are: " + breadMiddleStatement1);
-			System.out.println("The statement between the two breads are: " + breadMiddleStatement2);
-		}
-		if(bread.length == 4){
-			String breadMiddleStatement1 = bread[1];
-			String breadMiddleStatement2 = bread[2];
-			String breadMiddleStatement3 = bread[3];
-			System.out.println("The statement between the two breads are: " + breadMiddleStatement1);
-			System.out.println("The statement between the two breads are: " + breadMiddleStatement2);
-			System.out.println("The statement between the two breads are: " + breadMiddleStatement3);
-		}
+	for(int i = 1; i <bread.length; i++){
+		String breadMiddleStatement = bread[i];
+		System.out.println("The statement between the two breads are: " + breadMiddleStatement);
+	}
+//		if(bread.length == 2){
+//			String breadMiddleStatement = bread[1];
+//			System.out.println("The statement between the two breads are: " + breadMiddleStatement);
+//		}
+//		if(bread.length == 3){
+//			String breadMiddleStatement1 = bread[1];
+//			String breadMiddleStatement2 = bread[2];
+//			System.out.println("The statement between the two breads are: " + breadMiddleStatement1);
+//			System.out.println("The statement between the two breads are: " + breadMiddleStatement2);
+//		}
+//		if(bread.length == 4){
+//			String breadMiddleStatement1 = bread[1];
+//			String breadMiddleStatement2 = bread[2];
+//			String breadMiddleStatement3 = bread[3];
+//			System.out.println("The statement between the two breads are: " + breadMiddleStatement1);
+//			System.out.println("The statement between the two breads are: " + breadMiddleStatement2);
+//			System.out.println("The statement between the two breads are: " + breadMiddleStatement3);
+//		}
 	//if there is no "bread" before this start here.
 	//if there is no bread after this end here
 }

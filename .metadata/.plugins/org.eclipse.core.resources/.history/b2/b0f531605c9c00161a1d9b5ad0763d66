@@ -22,7 +22,7 @@ public class Split
 		 * use String.split to split up the sandwich by the word "bread" and return what's in the middle of the sandwich and ignores what's on the outside
 		 * What if it's a fancy sandwich with multiple pieces of bread?
 		*/
-		splitBread("applebreadyogurtyahibread");
+		splitBread("applebreadyogurtyahi");
 		splitStringAtSpaces("bread ham lettuce yogurt tomatoe mayo mayo mayo cheese bread egg cheese");
 
 		

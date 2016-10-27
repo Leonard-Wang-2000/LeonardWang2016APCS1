@@ -67,7 +67,7 @@ public static void splitBread(String breadStatement){
 //		System.out.println(bread[i-1]);
 //	}
 	//need to find # of breads
-	if(breadArray.length <= 2){
+	if(breadArray.length < 2){
 		System.out.println("Not a sandwiche");
 	}else{
 	for(int i = 1; i <breadArray.length; i++){
