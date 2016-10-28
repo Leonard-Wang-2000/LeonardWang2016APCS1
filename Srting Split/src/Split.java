@@ -22,8 +22,8 @@ public class Split
 		 * use String.split to split up the sandwich by the word "bread" and return what's in the middle of the sandwich and ignores what's on the outside
 		 * What if it's a fancy sandwich with multiple pieces of bread?
 		*/
-		splitBread("applebreadyogurtyahibread");
-		splitStringAtSpaces("bread ham lettuce yogurt tomatoe mayo mayo mayo cheese bread egg cheese");
+		splitBread("applepinapplepenbreadapplepinapplebread");
+		splitStringAtSpaces("ham lettuce yogurt tomatoe mayo mayo bread bread mayo cheese egg cheese");
 
 		
 		//Your task pt 2:
@@ -36,16 +36,22 @@ public class Split
 
 	}
 public static void splitStringAtSpaces(String sandwiche){
-	String [] revisedSandwiche = sandwiche.split("bread");
-	if(revisedSandwiche.length <= 2){
+	String a = "";
+	String [] revisedSandwiche = sandwiche.split(" ");
+	for(int i = 0; i < revisedSandwiche.length; i++){
+		a += revisedSandwiche[i];
+	}
+	String[] finalBreadArray = a.split("bread");
+	System.out.println(finalBreadArray.length);
+	if(finalBreadArray.length <= 2){
 		System.out.println("Not a sandwiche");
 	}else {
-		if(revisedSandwiche[1].equals(" ")){
-			System.out.println("Not A sandwiche");
-		}else{
-		for(int i = 1; i < revisedSandwiche.length-1; i++){
-			sandwiche = revisedSandwiche[i];
-			System.out.print(sandwiche);
+//		if(revisedSandwiche[1].equals(" ")){
+//			System.out.println("Not A sandwiche");
+//		}else{
+		System.out.println(finalBreadArray.length-1);
+		for(int i = 1 ; i < finalBreadArray.length-1; i++){
+			System.out.print(finalBreadArray[i]);
 		}
 		}
 	}
@@ -53,10 +59,11 @@ public static void splitStringAtSpaces(String sandwiche){
 //		sandwiche = revisedSandwiche[1];
 //		System.out.println(sandwiche);
 //	}
-}
+
 
 public static void splitBread(String breadStatement){
-	String[] breadArray = breadStatement.split("bread");
+	String preventError = " " + breadStatement + " ";
+	String[] breadArray = preventError.split("bread");
 //	while(breadStatement.contains("bread")){
 //		breadStatement.replaceFirst("bread"," ");
 //		System.out.println(breadStatement);
@@ -70,9 +77,12 @@ public static void splitBread(String breadStatement){
 	if(breadArray.length <= 2){
 		System.out.println("Not a sandwiche");
 	}else{
-	for(int i = 1; i <breadArray.length; i++){
+	for(int i = 1; i <breadArray.length-1; i++){
 		String breadMiddleStatement = breadArray[i];
+		if(breadArray[i].equals(" ")){
+		}else{
 		System.out.println("The statement between the two breads are: " + breadMiddleStatement);
+	}
 	}
 	}
 //		if(bread.length == 2){
