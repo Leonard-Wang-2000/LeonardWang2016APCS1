@@ -82,7 +82,6 @@ public static void splitBread(String breadStatement){
 	}else{
 	for(int i = 1; i <breadArray.length-1; i++){
 		String breadMiddleStatement = breadArray[i];
-		//If two breads are next to each other, there will be a space taking up an index of an Array
 		if(breadArray[i].equals(" ")){
 		}else{
 		System.out.println("The statement between the two breads are: " + breadMiddleStatement);
