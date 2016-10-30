@@ -22,9 +22,19 @@ public class Split
 		 * use String.split to split up the sandwich by the word "bread" and return what's in the middle of the sandwich and ignores what's on the outside
 		 * What if it's a fancy sandwich with multiple pieces of bread?
 		*/
-		splitStringAtSpaces("bread ham lettuce yogurt tomatoe mayo mayo mayo bread bread cheese egg cheese bread bread");
-		splitStringAtSpaces("bread bread ham lettuce yogurt tomatoe mayo mayo mayo bread cheese egg cheese bread bread");
-		splitBread("applepinapplepenbreadapplepinapplebread");
+		System.out.println(splitStringAtSpaces("bread bread ham lettuce yogurt tomatoe mayo mayo mayo bread cheese egg cheese bread bread"));
+		System.out.println(splitStringAtSpaces("bread bread"));
+		System.out.println(splitStringAtSpaces("bread mayo mayo bread"));
+		System.out.println(splitStringAtSpaces("bread ham bread mayo badsasd"));
+		System.out.println(splitStringAtSpaces("ham ham bread bread"));
+		System.out.println(splitStringAtSpaces("bread mayo mayo bread "));
+		System.out.println(splitStringAtSpaces("mayo bread bread mayo mayo"));
+		System.out.println(splitStringAtSpaces("bread bread ham ham ham"));
+		System.out.println(splitBread("breadbreadhihibread"));
+		System.out.println(splitBread("breadbread"));
+		System.out.println(splitBread("hihibreadbread"));
+		System.out.println(splitBread("breadhibreadhisuperbreadmianbreadaasd"));
+		System.out.println(splitBread("breadhihibreadbread"));
 
 		
 		//Your task pt 2:
@@ -36,9 +46,11 @@ public class Split
 		
 
 	}
-public static void splitStringAtSpaces(String sandwiche){
+public static String splitStringAtSpaces(String sandwiche){
 	//starts with a space so if bread is at the beginning it won't impact the code
-	String stringWithoutSpaces = " ";
+	String answerToReturn = "";
+	String stringWithoutSpaces = "  ";
+	String notASandwiche = "not a sandwiche";
 	//Boolean used later to guarentee that there Nothing between sandwiche won't be printed if there is actually one
 	boolean test = false;
 	String [] revisedSandwiche = sandwiche.split(" ");
@@ -47,24 +59,24 @@ public static void splitStringAtSpaces(String sandwiche){
 		stringWithoutSpaces += revisedSandwiche[i];
 	}
 	//Adds space to the end so ending with bread won't impact the code
+	stringWithoutSpaces = " " + stringWithoutSpaces;
 	stringWithoutSpaces += " ";
 	String[] finalBreadArray = stringWithoutSpaces.split("bread");
 	//Makes sure there is a sandwiche
 	if(finalBreadArray.length <= 2){
-		System.out.println("Not a sandwiche");
+		return notASandwiche;
 	}else {
 		//Runs through array with bread and spaces split out
 		for(int i = 1; i < finalBreadArray.length-1; i++){
-			if(finalBreadArray[i].equals("") && test == false){
-				System.out.println("\nNothing between Sandwiche");
-				//If there is nothing, end code
-				break;
+			if(finalBreadArray[i].equals("") && i == finalBreadArray.length - 2 && test == false){
+				return notASandwiche;
 			}else{
-				System.out.print(finalBreadArray[i]);
+				answerToReturn += finalBreadArray[i];
 				test = true;
 			}
 		}
 		}
+	return answerToReturn;
 	}
 //	if(revisedSandwiche.length == 3){
 //		sandwiche = revisedSandwiche[1];
@@ -72,24 +84,28 @@ public static void splitStringAtSpaces(String sandwiche){
 //	}
 
 
-public static void splitBread(String breadStatement){
+public static String splitBread(String breadStatement){
 	//Adds spaces to the statement in case we start or end with bread
+	String finalString = "";
+	String notASandwiche = "not a sandwiche";
 	String preventError = " " + breadStatement + " ";
 	// get rid of bread
 	String[] breadArray = preventError.split("bread");
 	// Makes sure it is a sandwiche
 	if(breadArray.length <= 2){
-		System.out.println("Not a sandwiche");
+		return notASandwiche;
 	}else{
 	for(int i = 1; i <breadArray.length-1; i++){
 		String breadMiddleStatement = breadArray[i];
 		//If two breads are next to each other, there will be a space taking up an index of an Array
-		if(breadArray[i].equals(" ")){
+		if(breadArray[i].equals("")){
+			System.out.print("");
 		}else{
-		System.out.println("The statement between the two breads are: " + breadMiddleStatement);
+		finalString += breadMiddleStatement;
 	}
 	}
 	}
+	return finalString;
 }
 }
 
