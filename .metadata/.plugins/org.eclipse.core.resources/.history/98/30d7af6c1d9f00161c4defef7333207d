@@ -48,7 +48,6 @@ public class Split
 	}
 public static String splitStringAtSpaces(String sandwiche){
 	//starts with a space so if bread is at the beginning it won't impact the code
-	//AnswerToReturn is the final String answer
 	String answerToReturn = "";
 	String stringWithoutSpaces = "  ";
 	String notASandwiche = "not a sandwiche";
@@ -69,7 +68,6 @@ public static String splitStringAtSpaces(String sandwiche){
 	}else {
 		//Runs through array with bread and spaces split out
 		for(int i = 1; i < finalBreadArray.length-1; i++){
-			//All conditions have to be met to print not a sandwiche, guarentees that no faulty return statements happen
 			if(finalBreadArray[i].equals("") && i == finalBreadArray.length - 2 && test == false){
 				return notASandwiche;
 			}else{
