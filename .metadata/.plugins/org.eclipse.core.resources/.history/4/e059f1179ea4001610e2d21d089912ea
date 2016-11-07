@@ -1,7 +1,7 @@
 package arrays_materials;
 
 import java.util.Arrays;
-//Leonard Wang, APCS1, 1st period
+
 public class ArraysLab3 
 {
 	/*
@@ -16,7 +16,6 @@ public class ArraysLab3
 		assert (arr2.length > 0);
 		assert (arr1.length == arr2.length);
 		int [] arr3 = new int[arr1.length];
-		//Goes through the array and adds each index into a new array at that index
 		for(int i = 0; i < arr3.length; i++){
 			arr3[i] = arr1[i] + arr2[i];
 		}
@@ -33,9 +32,7 @@ public class ArraysLab3
 	public static int[] append(int[] arr, int num)
 	{
 		assert (arr.length > 0);
-		//Makes new array with a length one longer
 		int[] arr1 = new int[arr.length+1];
-		//Runs loop, if its the last number of the original array, it adds the requested num to it
 		for(int i = 0; i < arr1.length; i++){
 			if(i == arr1.length-1){
 				arr1[i] = num;
@@ -56,9 +53,7 @@ public class ArraysLab3
 	{
 		assert (arr.length >= 2);
 		int [] arr1 = new int[arr.length-1];
-		//Makes an array one less than its original length
 		for(int i = 0 ;i < arr1.length; i++){
-			//Runs through this loop and removes whatever index the user requested
 			if(i >= idx){
 				arr1[i] = arr[i+1];
 			}else{
@@ -78,7 +73,6 @@ public class ArraysLab3
 		assert (arr.length > 0);
 		int sum = 0;
 		for(int i = 0; i < arr.length; i++){
-			//Checks if it is even, if it is, adds the number to a counter variable, which is the sum in this case
 			if(i%2==0){
 				sum += arr[i];
 			}
@@ -96,13 +90,11 @@ public class ArraysLab3
 	public static void rotateRight(int[] arr)
 	{
 		int [] arr2 = new int[arr.length];
-		//Makes a copy of the original array
 		for(int i = 0; i < arr.length; i++){
 			arr2[i] = arr[i];
 		}
 		assert (arr.length > 0);
 		for(int i = 0 ; i < arr2.length; i++){
-			//Sets the first number to the end and everything else one to the right
 			if(i == 0){
 				arr[i] = arr2[arr2.length-1];
 			} else{
@@ -136,7 +128,6 @@ public class ArraysLab3
 	
 	public static void main(String[] args) 
 	{
-		//Couples of tests
 		int[] a1 = {5, 10, 15, 20, 25, 30, 35, 40};
 		int [] a2 = {7, 14, 21, 28, 35, 42, 49, 56};
 		int [] sumArr = sum(a1, a2);
