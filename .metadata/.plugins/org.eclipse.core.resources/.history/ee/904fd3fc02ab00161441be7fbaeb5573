@@ -18,12 +18,7 @@ public class FracCalc {
     	String operator = splitString[1];
     	String secondOperand = splitString[2];
     	String [] splitFirstFraction = firstOperand.split("_");
-    	String wholeNum;
-    	if(splitFirstFraction.length == 2){
-    		wholeNum = splitFirstFraction[0];
-    	} else{
-    		wholeNum = "0";
-    	}
+    	String numerator1 = splitFirstFraction[0];
     	return secondOperand;        
     }
 
