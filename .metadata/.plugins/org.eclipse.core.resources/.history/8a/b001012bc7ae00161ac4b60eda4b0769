@@ -57,13 +57,12 @@ public class FracCalc {
     			denominator2 = splitAgain2[1];
     		}
     	} else{
+    		wholeNum2 = "0";
     		String[] splitAgain2 = splitSecondFraction[0].split("/"); 
     		if(splitAgain2.length == 1){
-    			wholeNum2 = splitAgain2[0];
-    			numerator2 = "0";
+    			numerator2 = splitAgain2[0];
     			denominator2 = "1"; 
     		}else{
-    			wholeNum2 = "0";
     			numerator2 = splitAgain2[0];
     			denominator2 = splitAgain2[1];
     		}
