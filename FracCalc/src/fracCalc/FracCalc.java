@@ -18,9 +18,26 @@ public class FracCalc {
     	String firstOperand = splitString[0];
     	String operator = splitString[1];
     	String secondOperand = splitString[2];
-    	parseOperands(firstOperand);
-    	parseOperands(secondOperand);
-		return "s";
+    	int [] operandOne = new int[3];
+    	int [] operandTwo = new int[3];
+    	int []result = new int[2];
+    	//Sets the whole number, numerator, and denominator into an int Array
+    	//Order is whole number first, then numerator, then denominator
+    	operandOne = parseOperands(firstOperand);
+    	operandTwo = parseOperands(secondOperand);
+    	int []improperFracOperandOne = toImproperFrac(operandOne[0], operandOne[1], operandOne[2]);
+    	int []improperFracOperandTwo = toImproperFrac(operandTwo[0], operandTwo[1], operandTwo[2]);
+    	if(operator.equals("/")){
+    		result = divideAnswer(improperFracOperandOne[0], improperFracOperandOne[1], improperFracOperandTwo[0], improperFracOperandTwo[1]);
+    	}else if(operator.equals("*")){
+    		result = multiplyAnswer(improperFracOperandOne[0], improperFracOperandOne[1], improperFracOperandTwo[0], improperFracOperandTwo[1]);
+    	} else if(operator.equals("+")){
+    		result = addAnswer(improperFracOperandOne[0], improperFracOperandOne[1], improperFracOperandTwo[0], improperFracOperandTwo[1]);
+    	} else{
+    		result = subtractAnswer(improperFracOperandOne[0], improperFracOperandOne[1], improperFracOperandTwo[0], improperFracOperandTwo[1]);
+    	}
+    	System.out.println(Arrays.toString(result));
+		return result[0] + "/" + result[1];
     }
 
     // TODO: Fill in the space below with any helper methods that you think you will need
@@ -54,18 +71,21 @@ public class FracCalc {
     	arrayForFraction[0] = Integer.parseInt(wholeNum);
     	arrayForFraction[1] = Integer.parseInt(numerator);
     	arrayForFraction[2] = Integer.parseInt(denominator);
-    	System.out.println(Arrays.toString(arrayForFraction));
     	return arrayForFraction;
     	
     }
     public static int[] toImproperFrac(int wholeNum, int numerator, int denominator){
-		numerator = (wholeNum*denominator) + numerator;
+    	if(wholeNum < 0){
+    		numerator = wholeNum*denominator - numerator;
+    	}else{
+    		numerator = (wholeNum*denominator) + numerator;
+    	}
 		int [] numAndDem = new int[2];
 		numAndDem[0] = numerator;
 		numAndDem[1] = denominator;
 		return numAndDem;
 	}
-    public static int[] addOrSubtractAnswer(int num1, int dem1, int num2, int dem2){
+    public static int[] addAnswer(int num1, int dem1, int num2, int dem2){
     	int[] numAndDem = new int[2];
     	int finalDem;
     	int finalNum;
@@ -80,5 +100,24 @@ public class FracCalc {
     	numAndDem[1] = finalDem;
     	return numAndDem;
     }
+
+public static int[] subtractAnswer(int num1, int dem1, int num2, int dem2){
+	dem2 = dem2*-1;
+	return addAnswer(num1, dem1, num2, dem2);
+}
+public static int[] multiplyAnswer(int num1, int dem1, int num2, int dem2){
+	int[] numAndDem = new int[2];
+	int finalDem = dem1*dem2;
+	int finalNum = num1*num2;
+	numAndDem[0] = finalNum;
+	numAndDem[1] = finalDem;
+	return numAndDem;
+}
+public static int[] divideAnswer(int num1, int dem1, int num2, int dem2){
+	int placeHolderForSecondNumerator = num2;
+	num2 = dem2;
+	dem2 = placeHolderForSecondNumerator;
+	return multiplyAnswer(num1, dem1, num2, dem2);
+}
 }
 
