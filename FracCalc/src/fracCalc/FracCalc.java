@@ -5,15 +5,23 @@ import java.util.Scanner;
 
 public class FracCalc {
 	public static void main(String[] args){
-	String userInput = "";
-	Scanner scan = new Scanner(System.in);
-	while(userInput != "quit"){
-	System.out.println("Put in your equation");
-	userInput = scan.nextLine();
-	System.out.println(produceAnswer(userInput));
-	}
+		//Boolean variable to make loop run until user enters quit
+		boolean testForWhile = true;
+		String userInput = "";
+		Scanner scan = new Scanner(System.in);
+		while(testForWhile){
+			System.out.println("Put in your equation");
+			userInput = scan.nextLine();
+			//check if the userinput is quit
+			if(userInput.equals("quit")){
+				testForWhile = false;
+			}else{
+				System.out.println(produceAnswer(userInput));
+			}
+		}
 	}
 	public static String produceAnswer(String input){ 
+		//split the string based on the spaces
     	String[] splitString = input.split(" ");
     	String firstOperand = splitString[0];
     	String operator = splitString[1];
@@ -25,8 +33,10 @@ public class FracCalc {
     	//Order is whole number first, then numerator, then denominator
     	operandOne = parseOperands(firstOperand);
     	operandTwo = parseOperands(secondOperand);
+    	//change the int arrays into improper fractions, also int array
     	int []improperFracOperandOne = toImproperFrac(operandOne[0], operandOne[1], operandOne[2]);
     	int []improperFracOperandTwo = toImproperFrac(operandTwo[0], operandTwo[1], operandTwo[2]);
+    	//check the operators to call different methods
     	if(operator.equals("/")){
     		result = divideAnswer(improperFracOperandOne[0], improperFracOperandOne[1], improperFracOperandTwo[0], improperFracOperandTwo[1]);
     	}else if(operator.equals("*")){
