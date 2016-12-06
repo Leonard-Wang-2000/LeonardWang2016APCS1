@@ -48,15 +48,10 @@ public class FracCalc {
     	}
     	int[] mixedNum = toMixedNum(result[0], result[1]);
     	if(mixedNum[0] == 0){
-    		System.out.println(Arrays.toString(mixedNum));
     		return simplifyResult(mixedNum[1], mixedNum[2]);
     	}else{
     		String wholeNum = mixedNum[0] + "";
-    		if(simplifyResult(mixedNum[1], mixedNum[2]).equals("0")){
-    			return wholeNum;
-    		}else{
-    			return wholeNum + "_" + simplifyResult(mixedNum[1], mixedNum[2]);
-    		}
+    		return wholeNum + simplifyResult(mixedNum[1], mixedNum[2]);
     	}
     		
     }

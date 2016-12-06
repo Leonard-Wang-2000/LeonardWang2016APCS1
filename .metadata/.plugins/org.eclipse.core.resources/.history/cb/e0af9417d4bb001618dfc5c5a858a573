@@ -46,19 +46,7 @@ public class FracCalc {
     	} else{
     		result = subtractAnswer(improperFracOperandOne[0], improperFracOperandOne[1], improperFracOperandTwo[0], improperFracOperandTwo[1]);
     	}
-    	int[] mixedNum = toMixedNum(result[0], result[1]);
-    	if(mixedNum[0] == 0){
-    		System.out.println(Arrays.toString(mixedNum));
-    		return simplifyResult(mixedNum[1], mixedNum[2]);
-    	}else{
-    		String wholeNum = mixedNum[0] + "";
-    		if(simplifyResult(mixedNum[1], mixedNum[2]).equals("0")){
-    			return wholeNum;
-    		}else{
-    			return wholeNum + "_" + simplifyResult(mixedNum[1], mixedNum[2]);
-    		}
-    	}
-    		
+    	return simplifyResult(result[0], result[1]);
     }
 
     // TODO: Fill in the space below with any helper methods that you think you will need
@@ -168,12 +156,6 @@ public static String simplifyResult(int numerator, int denominator){
 	}else{
 		return numerator + "/" + denominator;
 	}
-}
-public static int[] toMixedNum(int numerator, int denominator){
-	int wholeNumber = numerator/denominator;
-	numerator = numerator%denominator;
-	int[] mixedNum = {wholeNumber, numerator, denominator};
-	return mixedNum;
 }
 }
 

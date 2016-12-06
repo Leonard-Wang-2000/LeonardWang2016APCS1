@@ -52,11 +52,7 @@ public class FracCalc {
     		return simplifyResult(mixedNum[1], mixedNum[2]);
     	}else{
     		String wholeNum = mixedNum[0] + "";
-    		if(simplifyResult(mixedNum[1], mixedNum[2]).equals("0")){
-    			return wholeNum;
-    		}else{
-    			return wholeNum + "_" + simplifyResult(mixedNum[1], mixedNum[2]);
-    		}
+    		return wholeNum + "_" + simplifyResult(mixedNum[1], mixedNum[2]);
     	}
     		
     }
@@ -158,7 +154,7 @@ public static int greatestCommonFactor(int num1, int num2){
 }
 public static String simplifyResult(int numerator, int denominator){
 	if(numerator == 0){
-		return "0";
+		return "";
 	} 
 	int gcf = greatestCommonFactor(numerator, denominator);
 	numerator = numerator/gcf;

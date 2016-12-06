@@ -46,19 +46,8 @@ public class FracCalc {
     	} else{
     		result = subtractAnswer(improperFracOperandOne[0], improperFracOperandOne[1], improperFracOperandTwo[0], improperFracOperandTwo[1]);
     	}
-    	int[] mixedNum = toMixedNum(result[0], result[1]);
-    	if(mixedNum[0] == 0){
-    		System.out.println(Arrays.toString(mixedNum));
-    		return simplifyResult(mixedNum[1], mixedNum[2]);
-    	}else{
-    		String wholeNum = mixedNum[0] + "";
-    		if(simplifyResult(mixedNum[1], mixedNum[2]).equals("0")){
-    			return wholeNum;
-    		}else{
-    			return wholeNum + "_" + simplifyResult(mixedNum[1], mixedNum[2]);
-    		}
-    	}
-    		
+    	System.out.println(Arrays.toString(result));
+		return result[0] + "/" + result[1];
     }
 
     // TODO: Fill in the space below with any helper methods that you think you will need
@@ -139,41 +128,6 @@ public static int[] divideAnswer(int num1, int dem1, int num2, int dem2){
 	num2 = dem2;
 	dem2 = placeHolderForSecondNumerator;
 	return multiplyAnswer(num1, dem1, num2, dem2);
-}
-public static int greatestCommonFactor(int num1, int num2){
-	int biggerNum;
-	int smallerNum;
-	if(num1 < num2){
-		biggerNum = num2;
-		smallerNum = num1;
-	} else{
-		biggerNum = num1;
-		smallerNum = num2;
-	}
-	if(biggerNum % smallerNum == 0){
-		return smallerNum;
-	}else{
-		return greatestCommonFactor(smallerNum, biggerNum % smallerNum);
-	}
-}
-public static String simplifyResult(int numerator, int denominator){
-	if(numerator == 0){
-		return "0";
-	} 
-	int gcf = greatestCommonFactor(numerator, denominator);
-	numerator = numerator/gcf;
-	denominator = denominator/gcf;
-	if(denominator == 1){
-		return numerator + "";
-	}else{
-		return numerator + "/" + denominator;
-	}
-}
-public static int[] toMixedNum(int numerator, int denominator){
-	int wholeNumber = numerator/denominator;
-	numerator = numerator%denominator;
-	int[] mixedNum = {wholeNumber, numerator, denominator};
-	return mixedNum;
 }
 }
 
