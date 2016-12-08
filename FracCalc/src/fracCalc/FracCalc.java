@@ -46,9 +46,17 @@ public class FracCalc {
     	} else{
     		result = subtractAnswer(improperFracOperandOne[0], improperFracOperandOne[1], improperFracOperandTwo[0], improperFracOperandTwo[1]);
     	}
+    	//Uses the result and change it into a mixed number
     	int[] mixedNum = toMixedNum(result[0], result[1]);
+    	//
+    	if(mixedNum[1] < 0 && mixedNum[2] < 0){
+    		mixedNum[1] = mixedNum[1] * -1;
+    		mixedNum[2] = mixedNum[2] * -1;
+    	}else if(mixedNum[0] >= 0 && mixedNum[1] > 0 && mixedNum[2] < 0){
+    		mixedNum[2] = mixedNum[2] * -1;
+    		mixedNum[1] = mixedNum[1] * -1;
+    	}
     	if(mixedNum[0] == 0){
-    		System.out.println(Arrays.toString(mixedNum));
     		return simplifyResult(mixedNum[1], mixedNum[2]);
     	}else{
     		String wholeNum = mixedNum[0] + "";
@@ -143,6 +151,12 @@ public static int[] divideAnswer(int num1, int dem1, int num2, int dem2){
 public static int greatestCommonFactor(int num1, int num2){
 	int biggerNum;
 	int smallerNum;
+	if(num1 < 0){
+		num1 = num1*-1;
+	}
+	if(num2 < 0){
+		num2 = num2*-1;
+	}
 	if(num1 < num2){
 		biggerNum = num2;
 		smallerNum = num1;
@@ -172,6 +186,12 @@ public static String simplifyResult(int numerator, int denominator){
 public static int[] toMixedNum(int numerator, int denominator){
 	int wholeNumber = numerator/denominator;
 	numerator = numerator%denominator;
+	if(wholeNumber < 0 && numerator < 0){
+		numerator = numerator*-1;
+	}
+	if(wholeNumber < 0 && denominator < 0){
+		denominator = denominator*-1;
+	}
 	int[] mixedNum = {wholeNumber, numerator, denominator};
 	return mixedNum;
 }
