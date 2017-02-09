@@ -1,6 +1,5 @@
 
 public abstract class Tickets {
-	//Number is numberOfDays???
 	private int number;
 	public Tickets(int number){
 		this.number = number;
