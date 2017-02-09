@@ -7,6 +7,6 @@ public abstract class Tickets {
 	}
 	public abstract int getPrice();
 	public String toString(){
-		return "Number: " + number + "Priceb : " + getPrice();
+		return "Number: " + number + "Price: " + getPrice();
 	}
 }
