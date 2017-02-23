@@ -1,0 +1,12 @@
+
+public class Pet {
+
+	private int x;
+	private int y;
+	public Pet(int a){
+		x = a;
+	}
+	public int stuff(int b){
+		return x;
+	}
+}
