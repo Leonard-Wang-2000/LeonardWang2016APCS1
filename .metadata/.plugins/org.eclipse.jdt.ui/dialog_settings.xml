@@ -5,26 +5,51 @@
 	<section name="javadoc">
 		<item value="public" key="access"/>
 		<item value="false" key="noindex"/>
-		<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\Calculate Library\javadoc.xml" key="antpath"/>
+		<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\testFile\javadoc.xml" key="antpath"/>
 		<item value="false" key="nodeprecatedlist"/>
 		<item value="true" key="use"/>
 		<item value="true" key="author"/>
 		<item value="false" key="nodeprecated"/>
 		<item value="false" key="nonavbar"/>
 		<item value="" key="docletpath"/>
-		<item value="" key="javadoc_command_history"/>
+		<item value=";C:\Users\leo\Downloads\FileTest.java" key="javadoc_command_history"/>
 		<item value="1.8" key="source"/>
 		<item value="true" key="version"/>
 		<item value="" key="docletname"/>
 		<item value="true" key="splitindex"/>
 		<item value="true" key="fromStandard"/>
 		<item value="false" key="notree"/>
-		<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\Calculate Library\doc" key="destdir"/>
+		<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\testFile\doc" key="destdir"/>
 		<item value="false" key="openinbrowser"/>
 		<section name="projects">
+			<section name="testFile">
+				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\testFile\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\testFile\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="arrays_lab_3_basic_skills_1dim">
+				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\arrays_lab_3_basic_skills_1dim\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\arrays_lab_3_basic_skills_1dim\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="FracCalc">
+				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\FracCalc\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\FracCalc\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="ACSLLand">
+				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\ACSLLand\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\ACSLLand\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
 			<section name="Calculate Library">
 				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\Calculate Library\javadoc.xml" key="antpath"/>
 				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\Calculate Library\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Srting Split">
+				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\Srting Split\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\Srting Split\doc" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
 			<section name="Access Calculate">
@@ -32,7 +57,45 @@
 				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\Access Calculate\doc" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
+			<section name="MagPie2">
+				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\MagPie2\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\MagPie2\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="ProgrammingExercisesAPCS1">
+				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\ProgrammingExercisesAPCS1\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\ProgrammingExercisesAPCS1\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Magpie4">
+				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\Magpie4\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\Magpie4\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="TicketProblems">
+				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\TicketProblems\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\TicketProblems\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Magpie3">
+				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\Magpie3\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1\Magpie3\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
 		</section>
+	</section>
+	<section name="FatJarPackageWizard">
+		<item value="C:\Users\leo\Desktop\LeonardWang2016APCS1" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
+		<item value="hey - testFile" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
+		<item value="C:\Users\leo\Downloads\FileTest.java" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
+		<item value="false" key="FatJarPackageWizardPage.ANTSCRIPT_SAVE"/>
+		<item value="1" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
+		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="C:\Users\leo\Downloads\FileTest.java"/>
+		</list>
+		<list key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION_HISTORY">
+			<item value=".xml"/>
+		</list>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item value="2" key="layout"/>
