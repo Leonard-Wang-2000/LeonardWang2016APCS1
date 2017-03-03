@@ -11,14 +11,11 @@ public class TextExcel
 	public static void main(String[] args){
 		Spreadsheet test = new Spreadsheet();
 		Scanner hi = new Scanner(System.in);
-		String tests = hi.next();
-		do{
-			tests = hi.next();
-			test.processCommand(tests);
-		}while(!tests.equals("quit"));
-		SpreadsheetLocation s = new SpreadsheetLocation("D5");
-		System.out.println(s.getCol());
-		System.out.println(s.getRow());
+		while(!hi.nextLine().equals("quit")){
+			test.processCommand(hi.nextLine());
+		}
+		
 		                      
+	    // Add your command loop here
 	}
 }

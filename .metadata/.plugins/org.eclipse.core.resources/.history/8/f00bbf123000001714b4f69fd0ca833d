@@ -14,7 +14,7 @@ public class TextExcel
 		String tests = hi.next();
 		do{
 			tests = hi.next();
-			test.processCommand(tests);
+			System.out.println(test.processCommand(tests));
 		}while(!tests.equals("quit"));
 		SpreadsheetLocation s = new SpreadsheetLocation("D5");
 		System.out.println(s.getCol());

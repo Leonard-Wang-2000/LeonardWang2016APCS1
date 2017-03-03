@@ -16,9 +16,8 @@ public class TextExcel
 			tests = hi.next();
 			test.processCommand(tests);
 		}while(!tests.equals("quit"));
-		SpreadsheetLocation s = new SpreadsheetLocation("D5");
-		System.out.println(s.getCol());
-		System.out.println(s.getRow());
+		
 		                      
+	    // Add your command loop here
 	}
 }

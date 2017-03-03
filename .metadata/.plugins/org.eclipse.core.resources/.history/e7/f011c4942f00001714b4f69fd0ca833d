@@ -9,7 +9,7 @@ public class SpreadsheetLocation implements Location
 	public int getRow()
     {
 		int row = Integer.parseInt(location.substring(1));
-        return row - 1;
+        return row;
     }
 
     @Override

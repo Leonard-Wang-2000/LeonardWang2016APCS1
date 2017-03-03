@@ -18,7 +18,6 @@ public class TextExcel
 		}while(!tests.equals("quit"));
 		SpreadsheetLocation s = new SpreadsheetLocation("D5");
 		System.out.println(s.getCol());
-		System.out.println(s.getRow());
 		                      
 	}
 }
