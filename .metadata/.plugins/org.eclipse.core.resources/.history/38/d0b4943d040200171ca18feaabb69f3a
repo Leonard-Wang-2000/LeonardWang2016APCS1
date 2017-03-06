@@ -1,0 +1,22 @@
+package textExcel;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+// Update this file with your own code.
+
+public class TextExcel
+{
+
+	public static void main(String[] args){
+		Spreadsheet test = new Spreadsheet();
+		Scanner hi = new Scanner(System.in);
+		String tests = hi.next();
+		while(!tests.equals("quit")){
+			test.processCommand(tests);
+			tests = hi.next();
+		}
+		SpreadsheetLocation s = new SpreadsheetLocation("D5");
+		                      
+	}
+}

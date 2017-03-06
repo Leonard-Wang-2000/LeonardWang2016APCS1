@@ -11,11 +11,11 @@ public class TextExcel
 		Spreadsheet test = new Spreadsheet();
 		Scanner getUserInput = new Scanner(System.in);
 		String userInput = getUserInput.next();
-		//loop runs until user types quit
 		while(!userInput.equals("quit")){
 			test.processCommand(userInput);
 			userInput = getUserInput.next();
 		}
+		SpreadsheetLocation s = new SpreadsheetLocation("D5");
 		                      
 	}
 }
