@@ -16,7 +16,9 @@ public class TextExcel
 			test.processCommand(userInput);
 			userInput = getUserInput.next();
 		}
-		test.getGridText();
+		TestsALL.Helper th = new TestsALL.Helper();
+
+        System.out.println(th.getText());
 		                      
 	}
 }
