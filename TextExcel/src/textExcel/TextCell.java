@@ -12,7 +12,6 @@ public class TextCell implements Cell {
 		return abbreviatedText;
 	}
 
-	@Override
 	public String fullCellText() {
 		return null;
 	}

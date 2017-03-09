@@ -33,10 +33,12 @@ public class Spreadsheet implements Grid
 
 	public String getGridText()
 	{
-		for(char a = 'A'; a < 'L'; a++){
-			System.out.print(a + "          ");
+		String lines = "";
+		for(char a = 'A'; a <= 'L'; a++){
+			System.out.print("   |" + a + "          " + lines);
+			
 		}
-		for(int i = 0; i < 20; i++){
+		for(int i = 0; i < 21; i++){
 			System.out.println(i);
 		}
 		return wholeSpreadsheet;
