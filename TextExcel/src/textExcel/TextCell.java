@@ -1,10 +1,14 @@
 package textExcel;
 
-public class TextCell implements Cell {
+public class TextCell extends EmptyCell implements Cell  {
 
 	private String strcontents = "";
 	private String abbreviatedText;
 	private char[] charArray = strcontents.toCharArray();
+	
+	public TextCell(String strcontents){
+		this.strcontents = strcontents;
+	}
 	public String abbreviatedCellText() {
 		for(int i = 0; i < 10; i++){
 			abbreviatedText += charArray[i];
@@ -13,7 +17,7 @@ public class TextCell implements Cell {
 	}
 
 	public String fullCellText() {
-		return null;
+		return strcontents;
 	}
 	public void setText(String strcontents){
 		this.strcontents = strcontents;

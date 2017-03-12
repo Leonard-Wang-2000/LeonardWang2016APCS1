@@ -17,6 +17,7 @@ public class TextExcel
 			userInput = getUserInput.next();
 		}
 		test.getGridText();
+		System.out.println(test.cellInspection("A1"));
 		                      
 	}
 }
