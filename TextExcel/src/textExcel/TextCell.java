@@ -7,33 +7,32 @@ public class TextCell implements Cell  {
 	private String strcontents = "";
 	private String abbreviatedText = "";
 	private char[] charArray = new char[strcontents.length()];
-	
+	//sets a value
 	public TextCell(String strcontents){
 		this.strcontents = strcontents;
 	}
 	public String abbreviatedCellText() {
-		//creates a new value so the original is not modified
-				String returnVal = "";
+		//makes new String so this method won't affect FullCellText when you take out the quotes
+				String abbreviatedString = "";
 				
-				//gets rid of quotation marks
+				//gets rid of quotes
 				if(strcontents.contains("\"") == true){
-					returnVal = strcontents.substring(1, strcontents.length() - 1);
+					abbreviatedString = strcontents.substring(1, strcontents.length() - 1);
 				}
-				//only takes first 10 characters if string is longer than 10
-				if(returnVal.length() > 10){
-					returnVal = returnVal.substring(0, 10);
-					return returnVal;
+				//Reduces string to first 10
+				if(abbreviatedString.length() > 10){
+					abbreviatedString = abbreviatedString.substring(0, 10);
+					return abbreviatedString;
 				}else{
-					
-					//fills in the spaces to make the value left alligned
-					while(returnVal.length() != 10){
-						returnVal += " ";
+					//fills in the spaces so total length will be 10
+					while(abbreviatedString.length() != 10){
+						abbreviatedString += " ";
 
 					}
-					return returnVal;
+					return abbreviatedString;
 				}
 	}
-
+	//returns full string
 	public String fullCellText() {
 		return strcontents;
 	}

@@ -19,20 +19,7 @@ public class Spreadsheet implements Grid
 		splitCommand[0] = splitCommand[0].toUpperCase();
 		//If length is 3 or less, that means it must want to inspectCell
 		if(command.length()==0){
-			return null;
-		} else if(command.length() <= 3){
-			return cellInspection(splitCommand[0]);
-			//check if the user input has clear
-		} else if (splitCommand[0].contains("CLEAR")){
-			//if theres no spaces, then must be just clear so clear entire cell
-			if(splitCommand.length == 1){
-				 clearEntireCell();
-				 return getGridText();
-				 //if there is space, then must be clearing just one spot
-			} else{
-				clearOneCell(splitCommand[1]);
-				return getGridText();
-			}
+			return "";
 		} else if(splitCommand.length >= 3){
 			String userInput = splitCommand[2];
 			int counter = 3;
@@ -44,7 +31,22 @@ public class Spreadsheet implements Grid
 			String cell = splitCommand[0];
 			cellAssignment(userInput, cell);
 			return getGridText();
-		}
+			//if its less than 3, it has to be cell inspection
+		}else if(command.length() <= 3){
+			return cellInspection(splitCommand[0]);
+			//check if the user input has clear, has been changed to uppercase
+		} else if (splitCommand[0].contains("CLEAR")){
+			//if theres no spaces, then must be just clear so clear entire cell
+			if(splitCommand.length == 1){
+				 clearEntireCell();
+				 return getGridText();
+				 //if there is space, then must be clearing just one spot
+			} else{
+				//in case the cell isnt uppercased
+				clearOneCell(splitCommand[1].toUpperCase());
+				return getGridText();
+			}
+		} 
 		return "";
 	}
 	public int getRows()
@@ -75,37 +77,42 @@ public class Spreadsheet implements Grid
 		
 		//fills in the grid
 		for(int i = 1; i <= rows; i++){
-			//makes new line at end of row
-			grid += "\n";
-			
+			//makes new line at end of row and adds the number
+			grid += "\n" + i;
 			//fixes the spacing when the numbers hit double digits
 			if(i >= 10){
-				grid += i + " |";
+				grid += " |";
 			}else{
-				grid += i + "  |";
+				grid += "  |";
 			}
 			
 			//sets all the values of each part of the array
 			for(int k = 0; k < cols; k++){
 				//includes the dashed lines at the end, only lets first 10 characters show
 				//Puts the cell with its values in the grid
+				//i-1 because i started at 1 for numbering but arrays are zero based
 				grid += arrayOfStuff[i-1][k].abbreviatedCellText() + "|";
 			}
 		}
 		// skips to next line after finishing creating the grid
+		grid += "\n";
 		return grid;
 
 		
 	}
 	public String cellInspection(String cell){
+		//makes new spreadsheetlocation object to get the rows and col
 		SpreadsheetLocation a = new SpreadsheetLocation(cell);
 		String result = arrayOfStuff[a.getRow()][a.getCol()].fullCellText();
 		return result;
 	}
+	//assigns cell using Textcell constructor
 	public void cellAssignment(String input, String cell){
 		SpreadsheetLocation b = new SpreadsheetLocation(cell);
 		arrayOfStuff[b.getRow()][b.getCol()] = new TextCell(input);
 	}
+	
+	//sets everything to emptycell to clear
 	public void clearEntireCell(){
 		for(int i = 0; i < rows; i++){
 			for(int j = 0; j < cols; j++){
