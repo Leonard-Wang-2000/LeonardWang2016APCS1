@@ -1,0 +1,29 @@
+package textExcel;
+
+public class TextCell implements Cell  {
+
+	private String strcontents = "";
+	private String abbreviatedText;
+	private char[] charArray = strcontents.toCharArray();
+	
+	public TextCell(String strcontents){
+		this.strcontents = strcontents;
+	}
+	public String abbreviatedCellText() {
+		System.out.println(strcontents);
+		System.out.println(strcontents.length());
+		for(int i = 0; i < 10; i++){
+			abbreviatedText += charArray[i];
+		}
+		return abbreviatedText;
+	}
+
+	public String fullCellText() {
+		return strcontents;
+	}
+	public void setText(String strcontents){
+		this.strcontents = strcontents;
+		strcontents.replaceAll("\"", "");
+	}
+
+}

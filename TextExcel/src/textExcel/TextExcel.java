@@ -3,6 +3,8 @@ package textExcel;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import textExcel.TestsALL.TestLocation;
+
 public class TextExcel
 {
 
@@ -10,14 +12,11 @@ public class TextExcel
 		//makes new spreadsheet object
 		Spreadsheet test = new Spreadsheet();
 		Scanner getUserInput = new Scanner(System.in);
-		String userInput = getUserInput.next();
+		String userInput = getUserInput.nextLine();
 		//loop runs until user types quit
 		while(!userInput.equals("quit")){
-			test.processCommand(userInput);
+			System.out.println(test.processCommand(userInput));
 			userInput = getUserInput.next();
 		}
-		test.getGridText();
-		System.out.println(test.cellInspection("A1"));
-		                      
 	}
 }

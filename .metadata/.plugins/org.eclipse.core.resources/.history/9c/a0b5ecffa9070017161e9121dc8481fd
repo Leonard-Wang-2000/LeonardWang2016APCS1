@@ -1,0 +1,46 @@
+package textExcel;
+
+import java.util.Arrays;
+
+public class TextCell implements Cell  {
+
+	private String strcontents = "";
+	private String abbreviatedText = "";
+	private char[] charArray = new char[strcontents.length()];
+	
+	public TextCell(String strcontents){
+		this.strcontents = strcontents;
+	}
+	public String abbreviatedCellText() {
+		strcontents = strcontents.substring(1, strcontents.length()-1);
+		charArray = strcontents.toCharArray();
+		int length = charArray.length;
+		if(length > 10){
+			length = 10;
+		}
+		for(int i = 0; i < length; i++){
+			abbreviatedText += charArray[i];
+//			while(length <= 10){
+//				abbreviatedText += " ";
+//			length++;
+//			}
+		}
+		int counter = 10 - length;
+		String holder = "";
+		for(int i = 0; i < counter; i++){
+			holder += " ";
+		}
+		return abbreviatedText + holder;
+	}
+
+	public String fullCellText() {
+		if(!strcontents.contains("\"")){
+			strcontents = "\"" + strcontents + "\"";
+		}
+		return strcontents;
+	}
+	public void setText(String strcontents){
+		this.strcontents = strcontents;
+	}
+
+}

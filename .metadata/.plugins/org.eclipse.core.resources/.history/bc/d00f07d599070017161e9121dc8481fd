@@ -1,0 +1,117 @@
+package textExcel;
+
+
+public class Spreadsheet implements Grid
+{
+	public Spreadsheet(){
+		 for(int i = 0; i < rows; i++){
+			 for(int j = 0; j < cols; j++){
+				 arrayOfStuff[i][j] = new EmptyCell();
+			 }
+		 }
+	}
+	private int rows = 20;
+	private int cols = 12;
+	private Cell [][] arrayOfStuff = new Cell[rows][cols];
+	private String wholeSpreadsheet = "";
+	//2d array for rows and columns
+	public String processCommand(String command)
+	{
+		String[] splitCommand = command.split(" ");
+		//in case of lower case
+		splitCommand[0] = splitCommand[0].toUpperCase();
+		//If length is 3 or less, that means it must want to inspectCell
+		if(command.length() == 0){
+			return "";
+		} else if(command.length() <= 3){
+			return cellInspection(command);
+			//check if the user input has clear
+		} else if (splitCommand[0].contains("CLEAR")){
+			//if theres no spaces, then must be just clear so clear entire cell
+			if(splitCommand.length == 1){
+				 clearEntireCell();
+				 return getGridText();
+				 //if there is space, then must be clearing just one spot
+			} else{
+				clearOneCell(command);
+				return getGridText();
+			}
+		}
+		
+//		for(int i = 0; i < 20; i++){
+//			for(int j = 0; j < 12; j++){
+//				if(!command.equals("")){
+//					arrayOfStuff[i][j] = new TextCell(command);
+//				}
+//			}
+//		}
+		return command;
+	}
+	public int getRows()
+	{
+		return this.rows;
+	}
+
+
+	public int getCols()
+	{
+		return this.cols;
+	}
+
+	public Cell getCell(Location loc)
+	{
+		return null;
+	}
+
+	public String getGridText()
+	{
+		String grid = "";
+		System.out.print("   |");
+		for(char a = 'A'; a < 'M'; a++){
+			System.out.print(a + "         |");
+		}
+		System.out.println("");
+		for(int i = 1; i < 21; i++){
+			if(i < 10){
+				System.out.print(i + "  ");
+				for(int j = 0; j < 13; j++){
+					System.out.print("|          ");
+				}
+				System.out.println("");
+			}if(i >= 10){
+				System.out.print(i + " ");
+				for(int j = 0; j < 13; j++){
+					System.out.print("|          "); 
+				}
+//				for(int j = 0; j < 12; j++){
+//					grid += arrayOfStuff[i-1][j].abbreviatedCellText() + "|";
+//				}
+				System.out.println("");
+			}
+		}
+		return "";
+
+		
+	}
+	public String cellInspection(String cell){
+		SpreadsheetLocation a = new SpreadsheetLocation(cell);
+		String result = arrayOfStuff[a.getRow()][a.getCol()].fullCellText();
+		return result;
+	}
+	public void cellAssignment(String str, String cell){
+		SpreadsheetLocation b = new SpreadsheetLocation(cell);
+		arrayOfStuff[b.getRow()][b.getCol()] = new TextCell(str);
+	}
+	public void clearEntireCell(){
+		for(int i = 0; i < rows; i++){
+			for(int j = 0; j < cols; j++){
+				arrayOfStuff[i][j] = new EmptyCell();
+			}
+		}
+	}
+	public void clearOneCell(String cell){
+		SpreadsheetLocation userInput = new SpreadsheetLocation(cell);
+		arrayOfStuff[userInput.getRow()][userInput.getCol()] = new EmptyCell();
+	}
+
+}

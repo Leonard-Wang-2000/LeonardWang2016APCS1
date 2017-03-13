@@ -1,0 +1,150 @@
+package textExcel;
+public class Spreadsheet implements Grid
+{
+	public Spreadsheet(){
+		 for(int i = 0; i < rows; i++){
+			 for(int j = 0; j < cols; j++){
+				 arrayOfStuff[i][j] = new EmptyCell();
+			 }
+		 }
+	}
+	private int rows = 20;
+	private int cols = 12;
+	private Cell [][] arrayOfStuff = new Cell[rows][cols];
+	//2d array for rows and columns
+	public String processCommand(String command)
+	{
+		if(command.length() == 0){
+			return "";
+		}
+		
+		//splits the input by spaces
+		String[] split = command.split(" ");
+		
+		//gets rid of issue if the input has lowercases or uppercases
+		// for columns
+		split[0] = split[0].toUpperCase();
+		
+		//checks to see if the input is only 3 characters or less
+		//which could only be a cell and returns the value
+		if(command.length() <= 3){
+			return cellInspection(split[0]);
+		
+		// the first value is all uppercase
+		// checks to see if the first word is clear
+		}else if(split[0].contains("CLEAR")){
+			
+			// means that its clear with a cell so clears the cell
+			if(split.length == 2){
+				clearOneCell(split[1]);
+				
+				//returns how the grid looks like afterwards
+				return getGridText();
+				
+			}else{
+				
+				//clears the entire grid by making an entirely new grid
+				clearEntireCell();
+				
+				//returns the new grid
+				return getGridText();
+			}
+			
+		//checks the length, if more than three,
+		//then use to set values at a cell
+		}else if(split.length >= 3){
+			
+			//incase the input has multiple spaces so there are multiple splits
+			//for the input or value being set
+			//sets for the first value or string
+			String combinedStr = split[2];
+			
+			//the next value of the split array
+			int i = 3;
+			while(i < split.length){
+				//adds the space that was taken out and the next part of the value
+				combinedStr += " " + split[i];
+				i++;
+			}
+			
+			//calls method to set the cell
+			cellAssignment(split[0] ,combinedStr);
+			// returns the new grid with the new cell and value
+			return getGridText();
+			
+		}
+		// if nothing above works, will return this string containing nothing
+		return "";
+	}
+	public int getRows()
+	{
+		return this.rows;
+	}
+
+
+	public int getCols()
+	{
+		return this.cols;
+	}
+
+	public Cell getCell(Location loc)
+	{
+		return arrayOfStuff[loc.getRow()][loc.getCol()];
+	}
+
+	public String getGridText()
+	{
+		String grid = "   |";
+		
+		//fills in the top row with the letters
+		for(int i = 0; i < cols; i++){
+			//cast to character type for letters, add the 10 spaces between this and the next one
+			grid += (char) ('A' + i) + "         |";
+		}
+		
+		//fills in the grid
+		for(int i = 1; i <= rows; i++){
+			//makes new line at end of row
+			grid += "\n";
+			
+			//fixes the spacing when the numbers hit double digits
+			if(i >= 10){
+				grid += i + " |";
+			}else{
+				grid += i + "  |";
+			}
+			
+			//sets all the values of each part of the array
+			for(int k = 0; k < cols; k++){
+				//includes the dashed lines at the end, only lets first 10 characters show
+				//Puts the cell with its values in the grid
+				grid += arrayOfStuff[i-1][k].abbreviatedCellText() + "|";
+			}
+		}
+		// skips to next line after finishing creating the grid
+		return grid;
+
+		
+	}
+	public String cellInspection(String cell){
+		SpreadsheetLocation a = new SpreadsheetLocation(cell);
+		String result = arrayOfStuff[a.getRow()][a.getCol()].fullCellText();
+		return result;
+	}
+	public void cellAssignment(String input, String cell){
+		SpreadsheetLocation b = new SpreadsheetLocation(cell);
+		arrayOfStuff[b.getRow()][b.getCol()] = new TextCell(input);
+	}
+	public void clearEntireCell(){
+		for(int i = 0; i < rows; i++){
+			for(int j = 0; j < cols; j++){
+				arrayOfStuff[i][j] = new EmptyCell();
+			}
+		}
+	}
+	public void clearOneCell(String cell){
+		SpreadsheetLocation userInput = new SpreadsheetLocation(cell);
+		arrayOfStuff[userInput.getRow()][userInput.getCol()] = new EmptyCell();
+	}
+
+}
