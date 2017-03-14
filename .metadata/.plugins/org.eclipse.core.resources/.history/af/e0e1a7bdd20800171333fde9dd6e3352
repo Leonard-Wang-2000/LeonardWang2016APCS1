@@ -32,9 +32,7 @@ public class Spreadsheet implements Grid
 			cellAssignment(userInput, cell);
 			return getGridText();
 			//if its less than 3, it has to be cell inspection
-		}else if(command.length() < 3){
-			//make if statement to test the type of splitCommand[2]
-			if()
+		}else if(command.length() <= 3){
 			return cellInspection(splitCommand[0]);
 			//check if the user input has clear, has been changed to uppercase
 		} else if (splitCommand[0].contains("CLEAR")){
@@ -125,10 +123,6 @@ public class Spreadsheet implements Grid
 	public void clearOneCell(String cell){
 		SpreadsheetLocation userInput = new SpreadsheetLocation(cell);
 		arrayOfStuff[userInput.getRow()][userInput.getCol()] = new EmptyCell();
-	}
-	public void cellIntAssignment(int input, String cell){
-		SpreadsheetLocation c = new SpreadsheetLocation(cell);
-		arrayOfStuff[c.getRow()][c.getCol()] = new PercentCell(input);
 	}
 
 }
